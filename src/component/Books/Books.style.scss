@@ -1,0 +1,77 @@
+.BooksContainer {
+    .selectRange {
+        margin: 1rem 0;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .Recipes {
+        .pagination-buttons {
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0;
+            align-items: center;
+            gap: 1rem;
+
+            button {
+                background-color: #007bff;
+                border: none;
+                color: #eeeeee;
+                padding: .5rem;
+                border-radius: .2rem;
+                opacity: 1;
+                cursor: pointer;
+            }
+
+            &.pervious-button:disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+            &.next-button .disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+
+            &.current-page {
+                padding: .5rem; 
+            }
+        }
+
+        table {
+            padding: 3rem 3rem 0;
+            margin: auto;
+            width: 80%;
+            border-spacing: 0;
+            overflow: hidden;
+            border-radius: 0.4rem;
+
+            td,
+            th {
+                padding: 15px 20px;
+            }
+
+            td:nth-child(2n), td:nth-child(3) {
+                text-align: center;
+            }
+
+            th {
+                background-color: #007bff;
+                color: #fafafa;
+                font-family: 'Open Sans', Sans-serif;
+                font-weight: 200;
+            }
+
+            tr {
+                width: 100%;
+                background-color: #fafafa;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 16px;
+            }
+            
+            tr:nth-child(even) {
+                background-color: #eeeeee;
+            }
+        }
+    }
+}
