@@ -41,7 +41,7 @@ const BooksContainer = (props) => {
 
     const containerFunctions = {
         pageCalculation: () => pageCalculation(),
-        changePerPage: (val) => changePerPage(val)
+        changePerPage: (e) => changePerPage(e)
     }
 
     const containerProps = () => {
@@ -62,10 +62,11 @@ const BooksContainer = (props) => {
     if(isLoading) return <div><Loader isLoading={isLoading}/></div>
     if(error) return <div>{error.status}</div>
 
-    const changePerPage = (val) => {
-        setPerPage(val);
+    const changePerPage = (e) => {
+        const{ innerText } = e.target;
+        setPerPage(innerText);
         const Books = data.slice(0,100);
-        setTotalPages(Books.length/val);  
+        setTotalPages(Books.length/innerText);  
     }
 
     const pageCalculation = () => {

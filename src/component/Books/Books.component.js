@@ -1,8 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './Books.style.scss';
 
 const Books = (props) => {
     const { currentPage, goNextPage, goPreviousPage, pageCalculation, changePerPage, totalPages } = props;
+
+    const buttonRef = useRef();
 
     const [disable, setisDisable] = useState({
         isPrevDisable: false,
@@ -25,9 +27,9 @@ const Books = (props) => {
         <>
             <div className='BooksContainer'>
                 <div className='selectRange'>
-                    <button onClick={() => changePerPage(10)} className='perPageButton' >10</button>
-                    <button onClick={() => changePerPage(20)} className='perPageButton' >20</button>
-                    <button onClick={() => changePerPage(25)} className='perPageButton' >25</button>
+                    <button onClick={(e) => changePerPage(e)} className='perPageButton' ref={buttonRef}>10</button>
+                    <button onClick={(e) => changePerPage(e)} className='perPageButton' ref={buttonRef}>20</button>
+                    <button onClick={(e) => changePerPage(e)} className='perPageButton' ref={buttonRef}>25</button>
                 </div>
                 <div className="Recipes">
                     <table >
