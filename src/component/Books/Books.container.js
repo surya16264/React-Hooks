@@ -57,7 +57,7 @@ const BooksContainer = (props) => {
 
     const url = 'https://s3-ap-southeast-1.amazonaws.com/he-public-data/books8f8fe52.json';
     const { isLoading, error, data=[] } = useFetch(url);
-    console.log(useFetch(url));
+    // console.log(useFetch(url));
 
     if(isLoading) return <div><Loader isLoading={isLoading}/></div>
     if(error) return <div>{error.status}</div>

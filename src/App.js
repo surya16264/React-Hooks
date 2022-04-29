@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/index.scss';
 import HomePage from './route/HomePage';
 
 function App() {

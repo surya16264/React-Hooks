@@ -12,10 +12,10 @@ const Books = (props) => {
     useEffect(() => {
 
         const prevBtnDisable = () => {
-            (currentPage === 1) ? setisDisable({ ...disable, isPrevDisable: true }) : setisDisable({ ...disable, isPrevDisable: false });
+            (currentPage === 1) ? setisDisable((disable) => ({ ...disable, isPrevDisable: true })) : setisDisable((disable) => ({ ...disable, isPrevDisable: false }));
         }
         const nextBtnDisable = () => {
-            (currentPage === totalPages) ? setisDisable({ ...disable, isNextDisable: true }) : setisDisable({ ...disable, isNextDisable: false });
+            (currentPage === totalPages) ? setisDisable((disable) => ({ ...disable, isNextDisable: true })) : setisDisable((disable) => ({ ...disable, isNextDisable: false }));
         }
         prevBtnDisable();
         nextBtnDisable();
